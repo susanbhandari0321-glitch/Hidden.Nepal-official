@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Trek</title>
+  <link rel="stylesheet" href="../styles/bookatrek.css" />
+</head>
+<body>
+  <div class="booking-form">
+    <h2>Book a Trek</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="destination">Trek Destination</label>
+      <select id="destination" name="destination" required>
+        <option value="">-- Select Destination --</option>
+        <option value="everest">Rara Lake Trek</option>
+        <option value="annapurna">Tilicho Trek</option>
+        <option value="langtang">Manaslu Circuit Trek</option>
+        <option value="manaslu">Annapurna Base Camp Trek </option>
+ <option value="everest">mardi himal Trek</option>
+        <option value="annapurna"> Langtang Valley Trek </option>
+        <option value="langtang">Gosaikunda lake trek  </option>
+        <option value="manaslu">Dhaulagiri Cricuit Trek </option>
+ <option value="everest"> Everest Base Camp </option>
+        <option value="annapurna"> Gokyo lakes</option>
+        <option value="langtang"> Shey Phoksundo Lake</option>
+        <option value="manaslu">Api Base Camp Trek </option>
+ <option value="everest">Dorpatan Trek</option>
+        <option value="annapurna">Kanchenjunga Base Camp Trek</option>
+        <option value="langtang">Tree Passes Trek </option>
+        <option value="manaslu">Pikey Peaak Trek</option>
+ <option value="everest"> Annapurna Circuit Trek</option>
+        <option value="annapurna">Ghorepani Poon Hill Trek</option>
+        <option value="langtang">Nar Phu Valley Trek</option>
+        <option value="manaslu"> Sikles Trek</option>
+    <option value="annapurna">Makalu Base Camp Trek</option>
+        <option value="langtang">Panch POkhari</option>
+        <option value="manaslu">badimalika Trek</option>
+    <option value="annapurna">Kapuche Lake Trek</option>
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="people">Number of People</label>
+      <input type="number" id="people" name="people" min="1" required>
+
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Any special requests or notes?"></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+</body>
+</html>

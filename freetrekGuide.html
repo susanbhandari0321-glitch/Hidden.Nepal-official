@@ -1,0 +1,454 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hidden.Nepal</title>
+  <style>
+ :root{
+      --bg: #0b1020;
+      --card: #12182c;
+      --muted: #8b94a7;
+      --text: #e6e9f2;
+      --brand: #6ee7ff;
+      --accent: #ffc46e;
+      --ring: rgba(110,231,255,.45);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --grad: linear-gradient(135deg,#6ee7ff 0%,#a78bfa 50%,#ff9ecd 100%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 600px at 80% -10%, rgba(110,231,255,.08), transparent 60%),
+                 radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.08), transparent 60%), var(--bg);
+      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+     
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+
+    /* Header */
+    .header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: rgba(11,16,32,.6); border-bottom: 1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    
+
+    .logo-badge{width:36px; height:36px; border-radius:12px; background:var(--grad); box-shadow: var(--shadow)}
+    .nav-links{display:flex; gap:22px; align-items:center}
+    .nav-links a{opacity:.85}
+    .cta{padding:10px 16px; border-radius:999px; background:var(--grad); color:#0c1022; font-weight:700; box-shadow: var(--shadow)}
+
+
+  </style>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#"><span class="logo-badge" aria-hidden="true"></span> Hidden.Nepal</a>
+      
+    </div>
+  </header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hidden.Nepal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #374c50;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box {
+            width: 220px;
+            height: 250px;
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .box p {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body >
+    <h1 align="center">Choose a Treks</h1>
+    <div class="container" >
+        <a href="rara.html" class="box">
+            <img src="../assets/images/rara.jpeg" alt="Image 1">
+            <p>Rara lake Trek</p>
+        </a>
+        <a href="tilicho.html" class="box">
+            <img src="../assets/images/tilicho.jpeg" alt="Image 2">
+            <p>Tilicho Trek</p>
+        </a>
+        <a href="manaslu.html" class="box">
+            <img src="../assets/images/MANASLU.JPEG" alt="Image 3">
+            <p> Manaslu Circuit Trek</p>
+        </a>
+        <a href="abc.html" class="box">
+            <img src="../assets/images/abc.jpeg" alt="Image 4">
+            <p>Annapurna Base Camp Trek</p>
+        </a>
+        <a href="mardi.html" class="box">
+            <img src="../assets/images/mardi.jpeg" alt="Image 5">
+            <p>Mardi Himal Trek</p>
+        </a>
+        <a href="langtang.html" class="box">
+            <img src="../assets/images/langtang.jpeg" alt="Image 6">
+            <p>Langtang Valley Trek</p>
+        </a>
+        <a href="gosaikunda.html" class="box">
+            <img src="../assets/images/Gosaikunda Trek.jpeg " alt="Image 7">
+            <p>Gosaikunda lake trek</p>
+        </a>
+        <a href="dhaulagiri.html" class="box">
+            <img src="../assets/images/dhaulagiri.jpeg" alt="Image 8">
+            <p>Dhaulagiri Circuit Trek</p>
+        </a>
+        <a href="ebc.html" class="box">
+            <img src="../assets/images/Mt_Everest.jpeg" alt="Image 9">
+            <p>Everest Base Camp (EBC)</p>
+        </a>
+        <a href="html/gokyo.html" class="box">
+            <img src="../assets/images/Gokyo Valley Trek.jpeg " alt="Image 10">
+            <p>Gokyo Lakes</p>
+        </a>
+
+ <a href="sheyphoksundo.html" class="box">
+            <img src="../assets/images/shey.jpeg" alt="Image 11">
+            <p>Shey Phoksundo Lake</p>
+        </a>
+
+
+ <a href="api.html" class="box">
+            <img src="../assets/images/api.jpeg" alt="Image 12">
+            <p>Api Base Camp Trek</p>
+        </a>
+
+ <a href="dhorpatan.html" class="box">
+            <img src="../assets/images/dhorpatan.jpeg" alt="Image 13">
+            <p>Dorpatan trek</p>
+        </a>
+
+ <a href="kanchenjunga.html" class="box">
+            <img src="../assets/images/kanchanjanga.jpeg" alt="Image 14">
+            <p>Kanchenjunga Base Camp Trek</p>
+        </a>
+
+
+<a href="threepasses.html" class="box">
+            <img src="../assets/images/Three Passes Trek in Nepal.jpeg " alt="Image 15">
+            <p> Everest Three Passes Trek</p>
+        </a>
+
+
+
+<a href="pikey.html" class="box">
+            <img src="../assets/images/Exploring the Hidden Gems Mulde Peak and Khopra Danda Trek _ Travellers Guide Nepal.jpeg " alt="Image 16">
+            <p> Pikey Peak Trek</p>
+        </a>
+
+
+
+<a href="abccircuit.html" class="box">
+            <img src="../assets/images/abccircuit.jpeg" alt="Image 17">
+            <p> Annapurna Circuit Trek</p>
+        </a>
+
+
+
+<a href="gorepanipoonhill.html" class="box">
+            <img src="../assets/images/Trekking in nepal.jpeg" alt="Image 18">
+            <p> Ghorepani Poon Hill Trek</p>
+        </a>
+
+
+
+<a href="narphu.html" class="box">
+            <img src="../assets/images/opp.jpeg" alt="Image 19">
+            <p> Nar Phu Valley Trek</p>
+        </a>
+
+
+
+
+<a href="sikles.html" class="box">
+            <img src="../assets/images/Pin this for your next adventure!   Sikles Village Trek – A hidden paradise in Nepal! 🌄.jpeg  " alt="Image 20">
+            <p> Sikles Trek</p>
+        </a>
+
+
+
+<a href="makalubase.html" class="box">
+            <img src="../assets/images/https___mountainrocktreks_com_makalu-base-camp-trekking.jpeg" alt="Image 21">
+            <p>Makalu Base Camp Trek</p>
+        </a>
+
+
+<a href="panchpokhari.html" class="box">
+            <img src="../assets/images/Panch Pokhari Lake Nepal www_daytoursnepal.com" alt="Image 22">
+            <p>Panch Pokhari</p>
+        </a>
+
+
+<a href="kumdai.html" class="box">
+            <img src="../assets/images/Khumai Danda Trek _ Machhapuchhere model Trek.jpeg" alt="Image 23">
+            <p>Khumai Danda Trek</p>
+        </a>
+
+
+
+<a href="badimalika.html" class="box">
+            <img src="../assets/images/Beautiful badimalika Nepal.jpeg" alt="Image 24">
+            <p>Badimalika Trek</p>
+        </a>
+
+
+<a href="kapuche.html" class="box">
+            <img src="../assets/images/Kapuche Glacier lake Nepal.jpeg" alt="Image 25">
+            <p>Kapuche Lake Trek</p>
+        </a>
+
+
+
+
+
+
+<a href="../html/dhampus.html" class="box">
+            <img src="../assets/images/dhampus.jpg" alt="Image 24">
+            <p>Dhampus Trek</p>
+        </a>
+
+
+<a href="./upperdolpo.html" class="box">
+            <img src="../assets/images/upperdolpo.jpg" alt="Image 25">
+            <p>Upper Dolpo Trek</p>
+        </a>
+
+
+
+
+    </div>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page with Footer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1; /* Fills space between header and footer */
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+   
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesthetic Travel Footer</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    footer {
+        background: linear-gradient(135deg, #4b0055, #1a1a40);
+        color: #fff;
+        padding: 60px 20px 20px;
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .footer-section {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 25px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .footer-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    .footer-section h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #ffdd59;
+    }
+    .footer-section p {
+        color: #ddd;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    /* Contacts */
+    .contacts p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 8px 0;
+        color: #ccc;
+        font-size: 14px;
+    }
+    .contacts i {
+        color: #ffdd59;
+    }
+
+    /* Recent Trips */
+    .recent-trips {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        gap: 10px;
+        padding-left: 35px;
+        padding-bottom:15px;
+    }
+    .recent-trips img {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .recent-trips img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+        padding-top: 15px;
+        font-size: 14px;
+        color: #bbb;
+    }
+    .footer-bottom .links a {
+        color: #ffdd59;
+        margin: 0 12px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    .footer-bottom .links a:hover {
+        color: #fff;
+    }
+</style>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<footer>
+    <div class="footer-container">
+
+
+        <div class="footer-section">
+            <h3>Company Info</h3>
+            <p>A good plus of traveling is that often you get new skills without difficulty and without even noticing it.</p>
+        </div>
+
+    
+        <div class="footer-section contacts">
+            <h3>Contacts</h3>
+            <p><i class="fa-solid fa-phone"></i> 9847027432</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tilottama-5, Nayamil, Rupandehi, Nepal</p>
+            <p><i class="fa-solid fa-clock"></i> Sun - Sat 10:00am to 9:00pm</p>
+        </div>
+
+      
+        <div class="footer-section">
+            <h3>Recent Trips</h3>
+            <div class="recent-trips">
+               <img src="../assets/images/rara.jpeg" alt="Trip 1" ></a>
+              <img src="../assets/images/tilicho.jpeg" alt="Trip 2">
+                <img src="../assets/images/api.jpeg" alt="Trip 3">
+                <img src="../assets/images/MANASLU.JPEG" alt="Trip 4">
+                <img src="../assets/images/Beautiful badimalika Nepal.jpeg" alt="Trip 5">
+                <img src="../assets/images/Kapuche Glacier lake Nepal.jpeg" alt="Trip 6">
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="footer-bottom">
+        <div class="links">
+            <a href="termsandcondition.html">Terms & Conditions</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <br>
+        <p>Copyright © 2025 Hidden.Nepal. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

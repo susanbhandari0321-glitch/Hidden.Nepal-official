@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden.Nepal— International Trips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #12182c;
+      --muted: #8b94a7;
+      --text: #e6e9f2;
+      --brand: #6ee7ff;
+      --accent: #ffc46e;
+      --ring: rgba(110,231,255,.45);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --grad: linear-gradient(135deg,#6ee7ff 0%,#a78bfa 50%,#ff9ecd 100%);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 600px at 80% -10%, rgba(110,231,255,.08), transparent 60%),
+                 radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.08), transparent 60%), var(--bg);
+      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+
+    /* Header */
+    .header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: rgba(11,16,32,.6); border-bottom: 1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .logo-badge{width:36px; height:36px; border-radius:12px; background:var(--grad); box-shadow: var(--shadow)}
+    .nav-links{display:flex; gap:22px; align-items:center}
+    .nav-links a{opacity:.85}
+    .cta{padding:10px 16px; border-radius:999px; background:var(--grad); color:#0c1022; font-weight:700; box-shadow: var(--shadow)}
+
+    /* Hero */
+    .hero{position:relative; overflow:hidden}
+    .hero::after{
+      content:""; position:absolute; inset:0; background: url('ja') center/cover no-repeat; opacity:.22; filter: saturate(1.2) contrast(1.05);
+      z-index:-1;
+    }
+    .hero-inner{display:grid; grid-template-columns: 1.2fr .8fr; gap:40px; padding:64px 0 48px}
+    .headline{font-family: 'Playfair Display', Georgia, serif; font-weight:700; letter-spacing:.2px; line-height:1.1; font-size: clamp(34px, 5vw, 56px)}
+    .sub{color:var(--muted); max-width:60ch}
+
+    /* Search */
+    .search{
+      margin-top:26px; background:rgba(18,24,44,.8); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:12px; display:grid; grid-template-columns: 1fr 1fr 1fr auto; gap:10px; box-shadow: var(--shadow)
+    }
+    .field{display:flex; flex-direction:column; gap:6px}
+    .label{font-size:12px; opacity:.75}
+    .input{padding:14px; border-radius:12px; background:#0f1427; color:var(--text); border:1px solid rgba(255,255,255,.08); outline:none}
+    .input:focus{border-color: var(--ring); box-shadow: 0 0 0 4px var(--ring)}
+    .btn{padding:14px 18px; border-radius:12px; border:none; cursor:pointer; font-weight:700; background:var(--grad); color:#0c1022}
+
+    /* Badges */
+    .badges{display:flex; gap:14px; flex-wrap:wrap; margin-top:16px}
+    .badge{padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); font-size:12px}
+
+    /* Cards */
+    .section{padding:52px 0}
+    .section h2{font-size: clamp(22px, 3.5vw, 34px); margin:0 0 8px}
+    .section p.lead{color:var(--muted); margin-top:0}
+
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:18px}
+    .card{grid-column: span 4; background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); display:flex; flex-direction:column}
+    .card picture{aspect-ratio: 16/10; display:block; overflow:hidden}
+    .card img{width:100%; height:100%; object-fit:cover; display:block; transition: transform .6s ease}
+    .card:hover img{transform: scale(1.05)}
+    .card-body{padding:16px}
+    .meta{display:flex; gap:10px; font-size:10px; color:var(--muted)}
+    .price{margin-left:auto; color:var(--accent); font-weight:500}
+
+    /* Feature row */
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap:26px; align-items:center}
+    .feature{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:22px; box-shadow: var(--shadow)}
+    .steps{display:grid; gap:12px}
+    .step{display:flex; gap:14px; align-items:flex-start}
+    .step .num{min-width:34px; height:34px; border-radius:10px; display:grid; place-items:center; background:rgba(110,231,255,.15); border:1px solid rgba(110,231,255,.35); font-weight:800}
+
+    /* Testimonials */
+    .testi{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
+    .quote{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow)}
+    .quote p{margin:0}
+    .who{margin-top:12px; display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px}
+    .avatar{width:34px; height:34px; border-radius:50%; background: var(--grad)}
+
+    /* Newsletter */
+    .subscribe{display:flex; gap:10px; margin-top:10px}
+    .subscribe input{flex:1}
+
+    /* Footer */
+    .footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; color:var(--muted)}
+
+    /* Utilities */
+    .center{text-align:center}
+    .mt-2{margin-top:8px} .mt-4{margin-top:16px} .mt-6{margin-top:24px}
+
+    /* Responsive */
+    @media (max-width: 1000px){
+      .hero-inner{grid-template-columns: 1fr; gap:20px}
+      .search{grid-template-columns: 1fr 1fr auto}
+      .grid .card{grid-column: span 6}
+      .row{grid-template-columns: 1fr}
+    }
+    @media (max-width: 700px){
+      .nav-links{display:none}
+      .search{grid-template-columns: 1fr; position:relative}
+      .grid .card{grid-column: span 12}
+      .testi{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#"><span class="logo-badge" aria-hidden="true"></span> Hidden.Nepal</a>
+      <nav class="nav-links">
+        <a href="#destinations">Destinations</a>
+        <a href="#deals">Deals</a>
+        <a href="#how">How it works</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <a class="cta" href="#deals">Book a Trip</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1 class="headline">Plan your next <span style="background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent">international escape</span> with ease.</h1>
+        <p class="sub mt-4">Curated trips to 60+ countries with transparent pricing, flexible dates, and hand‑picked stays. Compare, customize, and book — all in one place.</p>
+
+        <!-- Search Bar (UI Only) -->
+        <form class="search" action="#destinations">
+          <label class="field">
+            <span class="label">Where to?</span>
+            <input class="input" type="text" placeholder="Tokyo, Paris, Sydney…" required>
+          </label>
+          <label class="field">
+            <span class="label">From</span>
+            <input class="input" type="text" placeholder="Kathmandu (KTM)">
+          </label>
+          <label class="field">
+            <span class="label">Dates</span>
+            <input class="input" type="text" placeholder="Oct 10 – Oct 20">
+          </label>
+          <button class="btn" type="submit">Search Trips</button>
+        </form>
+        <div class="badges">
+          <span class="badge">✈️ Free date changes</span>
+          <span class="badge">💳 Secure payments</span>
+          <span class="badge">⭐ 4.9/5 traveler rated</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="feature">
+          <h3 style="margin-top:0">This Month’s Top Picks</h3>
+          <div class="grid" style="grid-template-columns: repeat(6,1fr); gap:12px">
+            <a class="card" style="grid-column: span 3" href="#deals">
+              <picture><img alt="Paris" src="../assets/images/download.jpeg"></picture>
+              <div class="card-body">
+                <div class="meta"><span>Paris, France</span><span class="price">$899</span></div>
+                <div class="mt-2" style="color:var(--muted)">4 nights • Flight + Hotel</div>
+              </div>
+            </a>
+            <a class="card" style="grid-column: span 3" href="#deals">
+              <picture><img alt="Bali" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop"></picture>
+              <div class="card-body">
+                <div class="meta"><span>Bali, Indonesia</span><span class="price">$749</span></div>
+                <div class="mt-2" style="color:var(--muted)">6 nights • Beach Villas</div>
+              </div>
+            </a>
+            <a class="card" style="grid-column: span 2" href="#deals">
+              <picture><img alt="Tokyo" src="../assets/images/tokyo.jpeg.jpeg"></picture>
+              <div class="card-body">
+                <div class="meta"><span>Tokyo, Japan</span><span class="price">$1,099</span></div>
+                <div class="mt-2" style="color:var(--muted)">5 nights • City Explorer</div>
+              </div>
+            </a>
+            <a class="card" style="grid-column: span 2" href="#deals">
+              <picture><img alt="Dubai" src="../assets/images/Dubai Photos - Download Free High-Quality Pictures _ Freepik.jpeg"></picture>
+              <div class="card-body">
+                <div class="meta"><span>Dubai, UAE</span><span class="price">$659</span></div>
+                <div class="mt-2" style="color:var(--muted)">3 nights • Luxury Getaway</div>
+              </div>
+            </a>
+            <a class="card" style="grid-column: span 2" href="#deals">
+              <picture><img alt="Rome" src="../assets/images/Ancient Grandeur_ The Colosseum at Sunset.jpeg"></picture>
+              <div class="card-body">
+                <div class="meta"><span>Rome, Italy</span><span class="price">$829</span></div>
+                <div class="mt-2" style="color:var(--muted)">4 nights • History & Food</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section id="destinations" class="section">
+    <div class="container">
+      <h2>Popular Destinations</h2>
+      <p class="lead">Hand‑picked places travelers love for first‑time international trips.</p>
+      <div class="grid">
+        <!-- 6 destination cards -->
+        <article class="card">
+          <picture><img alt="Santorini" src="../assets/images/Picturesque Santorini.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Santorini, Greece</span><span class="price">$999</span></div>
+            <p class="mt-2">Cliffside sunsets, blue‑domed churches, and breezy cave stays.</p>
+            <a class="btn mt-4" href="../assets/images/greeece.html">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="Kyoto" src="../assets/images/tokyo.jpeg.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Kyoto, Japan</span><span class="price">$1,149</span></div>
+            <p class="mt-2">Temples, tea ceremonies, and tranquil bamboo forests.</p>
+            <a class="btn mt-4" href="../assets/images/japan.html">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="London" src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1200&auto=format&fit=crop"></picture>
+          <div class="card-body">
+            <div class="meta"><span>London, UK</span><span class="price">$879</span></div>
+            <p class="mt-2">Museums, markets, and royal landmarks in a walkable city.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="Singapore" src="../assets/images/SINGAPUR.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Singapore</span><span class="price">$699</span></div>
+            <p class="mt-2">Ultra‑clean, safe, and foodie‑friendly stopover paradise.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="Istanbul" src="../assets/images/ISTANBUL.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Istanbul, Türkiye</span><span class="price">$755</span></div>
+            <p class="mt-2">Bazaar vibes, Bosphorus cruises, and rich Ottoman history.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="Sydney" src="../assets/images/Sydney Poster - Sydney Print - Sydney Wall Art - Sydney Photo - Digital Download - High Quality 300dpi - JPEG file - Unique Artwork.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Sydney, Australia</span><span class="price">$1,299</span></div>
+            <p class="mt-2">Harbour views, coastal walks, and laid‑back surf culture.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature / How it works -->
+  <section id="how" class="section">
+    <div class="container row">
+      <div class="feature">
+        <h2>How it works</h2>
+        <div class="steps mt-4">
+          <div class="step"><div class="num">1</div><div><strong>Tell us your vibe.</strong><br><span class="muted">Beach, culture, food, adventure — or a mix.</span></div></div>
+          <div class="step"><div class="num">2</div><div><strong>We match top itineraries.</strong><br><span class="muted">Compare hotels, experiences, and add‑ons.</span></div></div>
+          <div class="step"><div class="num">3</div><div><strong>Book with flexibility.</strong><br><span class="muted">Free date changes up to 7 days before departure.</span></div></div>
+        </div>
+    
+      </div>
+      <div class="feature">
+        <h2>Why GlobeTrek?</h2>
+        <ul class="mt-4" style="margin:0 0 0 1rem; color:var(--muted)">
+          <li>Best‑value bundles: flights + stays + activities</li>
+          <li>24/7 traveler support across time zones</li>
+          <li>No hidden fees, ever</li>
+          <li>Curated by real travel experts</li>
+        </ul>
+        <div class="badges mt-6">
+          <span class="badge">ISO‑certified partner network</span>
+          <span class="badge">Protected payments</span>
+          <span class="badge">Carbon‑aware options</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals -->
+  <section id="deals" class="section">
+    <div class="container">
+      <h2>Featured Deals</h2>
+      <p class="lead">Seasonal offers with limited spots — lock yours now.</p>
+      <div class="grid">
+        <article class="card">
+          <picture><img alt="Swiss Alps" src="../assets/images/  Top 12 Winter Vacation Destinations Globally.jpeg"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Swiss Alps Escape</span><span class="price">$1,299</span></div>
+            <p class="mt-2">7 days • Glacier Express • Lake Lucerne cruise.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="Maldives" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1200&auto=format&fit=crop"></picture>
+          <div class="card-body">
+            <div class="meta"><span>Maldives Overwater</span><span class="price">$1,899</span></div>
+            <p class="mt-2">5 days • Overwater villa • All‑inclusive meals.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+        <article class="card">
+          <picture><img alt="New York" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&auto=format&fit=crop"></picture>
+          <div class="card-body">
+            <div class="meta"><span>NYC City Break</span><span class="price">$699</span></div>
+            <p class="mt-2">4 days • Times Square hotel • Broadway add‑on.</p>
+            <a class="btn mt-4" href="#">Book Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="section">
+    <div class="container">
+      <h2 class="center">What travelers say</h2>
+      <div class="testi mt-4">
+        <div class="quote">
+          <p>“Everything was seamless — flights, hotels, and tours. Loved the flexibility to shift dates.”</p>
+          <div class="who"><span class="avatar"></span> Kamala T. — Tokyo</div>
+        </div>
+        <div class="quote">
+          <p>“Best value package we found for Europe. No hidden costs and great support.”</p>
+          <div class="who"><span class="avatar"></span> Asim P. — Paris</div>
+        </div>
+        <div class="quote">
+          <p>“Hand‑picked stays made the trip feel premium without the price tag.”</p>
+          <div class="who"><span class="avatar"></span> Biraj C. — Bali</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section">
+    <div class="container feature">
+      <h2>Get weekly travel deals</h2>
+      <p class="lead">Join 50,000+ travelers who receive fresh itineraries and discounts.</p>
+      <form class="subscribe" action="#">
+        <input class="input" type="email" placeholder="your@email.com" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap">
+      <div>© <span id="yr"></span> Hidden.Nepal Pvt. Ltd.</div>
+      <div>Terms • Privacy • Support</div>
+    </div>
+  </footer>
+
+  <script>
+    // tiny enhancement: current year in footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
